@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAG - Instituto Agro Genética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* Degradê personalizado IAG */
+        .bg-iag-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+        }
+        
+        .text-iag-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Formas abstratas de fundo */
+        .shape-blob {
+            position: absolute;
+            background: rgba(6, 78, 59, 0.05);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite both alternate;
+            z-index: -1;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+        }
+
+        /* Efeito de vidro nas cartas */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Ocultar elementos de idioma inativo */
+        [lang="en"] .lang-pt { display: none; }
+        [lang="pt-BR"] .lang-en { display: none; }
+    </style>
+</head>
+<body class="relative overflow-x-hidden text-slate-800">
+
+    <!-- Formas de Fundo -->
+    <div class="shape-blob w-96 h-96 top-20 -left-20"></div>
+    <div class="shape-blob w-80 h-80 top-1/3 -right-10" style="animation-delay: -2s; background: rgba(15, 23, 42, 0.03);"></div>
+    <div class="shape-blob w-full h-96 bottom-0 left-0" style="border-radius: 50% 50% 0 0; background: linear-gradient(180deg, transparent, rgba(6, 78, 59, 0.05));"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-white tracking-wider flex items-center gap-2" id="logo-text">
+                        <i class="fas fa-dna text-emerald-400"></i>
+                        <span class="border-r-2 border-emerald-400/50 pr-2">IAG</span>
+                        <span class="text-sm font-normal text-slate-300 uppercase tracking-widest hidden sm:block">Instituto Agro Genética</span>
+                    </a>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-white/90">
+                    <a href="#servicos" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
+                    <a href="#tecnologias" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Tecnologias</span><span class="lang-en">Technologies</span></a>
+                    <a href="#sobre" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Sobre Nós</span><span class="lang-en">About Us</span></a>
+                    <a href="#contato" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
+                    
+                    <!-- Botão de Idioma -->
+                    <button onclick="toggleLanguage()" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm transition-all border border-white/10">
+                        <i class="fas fa-globe"></i>
+                        <span id="lang-btn-text" class="font-bold">EN</span>
+                    </button>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button onclick="toggleLanguage()" class="text-white hover:text-emerald-400 transition-colors">
+                        <span id="lang-btn-text-mobile" class="font-bold text-sm">EN</span>
+                    </button>
+                    <button id="mobile-menu-button" class="text-white hover:text-emerald-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/10 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="#servicos" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
+                <a href="#tecnologias" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Tecnologias</span><span class="lang-en">Technologies</span></a>
+                <a href="#sobre" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Sobre Nós</span><span class="lang-en">About Us</span></a>
+                <a href="#contato" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-iag-gradient relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Padrão de grade de fundo sutil -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 text-white">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <i class="fas fa-microscope"></i>
+                    <span class="lang-pt">Precisão e Inovação</span>
+                    <span class="lang-en">Precision and Innovation</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <span class="lang-pt">Decodificando o futuro da sua <span class="text-emerald-400">produtividade agrícola</span>.</span>
+                    <span class="lang-en">Decoding the future of your <span class="text-emerald-400">agricultural yield</span>.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    <span class="lang-pt">O Instituto Agro Genética (IAG) oferece soluções de ponta em marcadores moleculares e análise de solo para impulsionar os resultados no campo.</span>
+                    <span class="lang-en">The Agro Genetics Institute (IAG) offers cutting-edge solutions in molecular markers and soil analysis to boost results in the field.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#servicos" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3 px-8 rounded-lg shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-1">
+                        <span class="lang-pt">Nossos Serviços</span>
+                        <span class="lang-en">Our Services</span>
+                    </a>
+                    <a href="#contato" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold py-3 px-8 rounded-lg transition-all">
+                        <span class="lang-pt">Fale Conosco</span>
+                        <span class="lang-en">Contact Us</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 w-full mt-12 lg:mt-0 relative">
+                <!-- Imagem ilustrativa abstrata (Placeholder) -->
+                <div class="relative w-full aspect-square max-w-md mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="glass-card absolute inset-4 rounded-3xl overflow-hidden flex items-center justify-center p-8">
+                        <svg class="w-full h-full text-emerald-800 opacity-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                        </svg>
+                        <div class="absolute text-center">
+                            <i class="fas fa-leaf text-6xl text-emerald-400 mb-4 block drop-shadow-md"></i>
+                            <i class="fas fa-dna text-5xl text-slate-300 drop-shadow-md"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultivos Atendidos -->
+    <section class="py-12 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">
+                <span class="lang-pt">Cultivos que atendemos</span>
+                <span class="lang-en">Crops we support</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-seedling text-2xl text-amber-500"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Soja</span><span class="lang-en">Soybean</span>
+                    </span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-leaf text-2xl text-yellow-500"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Milho</span><span class="lang-en">Corn</span>
+                    </span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cloud text-2xl text-slate-300"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Algodão</span><span class="lang-en">Cotton</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <span class="lang-pt">Nossas <span class="text-iag-gradient">Especialidades</span></span>
+                    <span class="lang-en">Our <span class="text-iag-gradient">Specialties</span></span>
+                </h2>
+                <p class="text-slate-600">
+                    <span class="lang-pt">Tecnologia de precisão aplicada da semente ao solo para garantir a máxima eficiência e qualidade da sua lavoura.</span>
+                    <span class="lang-en">Precision technology applied from seed to soil to ensure maximum efficiency and quality for your crop.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Serviço 1: Biomol -->
+                <div class="glass-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-16 h-16 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg mb-8">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                        <span class="lang-pt">Serviços Biomoleculares</span>
+                        <span class="lang-en">Biomolecular Services</span>
+                    </h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        <span class="lang-pt">Análises genéticas precisas através de marcadores moleculares. Identificação de genes de interesse, pureza genética e suporte ao melhoramento genético vegetal.</span>
+                        <span class="lang-en">Precise genetic analysis through molecular markers. Identification of genes of interest, genetic purity, and support for plant breeding.</span>
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-slate-700">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-500"></i> <span class="lang-pt">Identificação varietal</span><span class="lang-en">Varietal identification</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-500"></i> <span class="lang-pt">Controle de qualidade de sementes</span><span class="lang-en">Seed quality control</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-500"></i> <span class="lang-pt">Detecção de transgenia</span><span class="lang-en">Transgenics detection</span></li>
+                    </ul>
+                </div>
+
+                <!-- Serviço 2: Análise de Solo -->
+                <div class="glass-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-200 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg mb-8">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                        <span class="lang-pt">Análise de Solo</span>
+                        <span class="lang-en">Soil Analysis</span>
+                    </h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        <span class="lang-pt">Diagnóstico completo da fertilidade e características físico-químicas do solo, permitindo recomendações de manejo precisas para altas produtividades.</span>
+                        <span class="lang-en">Complete diagnosis of soil fertility and physicochemical characteristics, allowing for precise management recommendations for high yields.</span>
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-slate-700">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-slate-800"></i> <span class="lang-pt">Análise química (Macronutrientes e Micronutrientes)</span><span class="lang-en">Chemical analysis (Macro and Micronutrients)</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-slate-800"></i> <span class="lang-pt">Análise física (Textura)</span><span class="lang-en">Physical analysis (Texture)</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-slate-800"></i> <span class="lang-pt">Recomendações corretivas</span><span class="lang-en">Corrective recommendations</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias e Capacidade -->
+    <section id="tecnologias" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-iag-gradient opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        <span class="lang-pt">Tecnologias & Capacidade</span>
+                        <span class="lang-en">Technologies & Capacity</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg mb-8">
+                        <span class="lang-pt">Nossa infraestrutura foi desenhada para atender altas demandas com rigor técnico e agilidade nos resultados.</span>
+                        <span class="lang-en">Our infrastructure was designed to meet high demands with technical rigor and agility in results.</span>
+                    </p>
+                    
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 mb-8">
+                        <h4 class="text-emerald-400 font-bold mb-2 uppercase tracking-wide text-sm">
+                            <span class="lang-pt">Tecnologias Atendidas Atualmente</span>
+                            <span class="lang-en">Currently Supported Technologies</span>
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <!-- Fictitious logo for technology -->
+                            <div class="bg-white p-3 rounded-lg inline-block">
+                                <span class="text-slate-900 font-black text-xl tracking-tighter">BASF</span>
+                            </div>
+                            <span class="text-slate-300 text-sm">
+                                <span class="lang-pt">Protocolos homologados e integração direta de dados.</span>
+                                <span class="lang-en">Approved protocols and direct data integration.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <i class="fas fa-chart-line text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">Alta</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Capacidade Operacional</span>
+                            <span class="lang-en">Operational Capacity</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <i class="fas fa-stopwatch text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">SLA</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Resultados rápidos e precisos</span>
+                            <span class="lang-en">Fast and accurate results</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <i class="fas fa-shield-alt text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">100%</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Controle de Qualidade</span>
+                            <span class="lang-en">Quality Control</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <i class="fas fa-server text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">+ Dados</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Rastreabilidade ponta a ponta</span>
+                            <span class="lang-en">End-to-end traceability</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre e Equipe -->
+    <section id="sobre" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <span class="lang-pt">Quem Somos & <span class="text-iag-gradient">Nossa Equipe</span></span>
+                    <span class="lang-en">Who We Are & <span class="text-iag-gradient">Our Team</span></span>
+                </h2>
+                <p class="text-slate-600">
+                    <span class="lang-pt">O IAG nasceu da necessidade de unir a ciência de dados genéticos à realidade do produtor rural, entregando inteligência para tomada de decisão.</span>
+                    <span class="lang-en">IAG was born from the need to unite genetic data science with the reality of the rural producer, delivering intelligence for decision making.</span>
+                </p>
+            </div>
+
+            <!-- Equipe (Mockup) -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Membro 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative">
+                        <!-- Imagem placeholder -->
+                        <img src="https://placehold.co/400x300/0f172a/ffffff?text=Foto" alt="Membro Equipe" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Dr. João Silva</h4>
+                            <p class="text-emerald-300 text-sm">
+                                <span class="lang-pt">Diretor Científico</span><span class="lang-en">Scientific Director</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Membro 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative">
+                        <img src="https://placehold.co/400x300/064e3b/ffffff?text=Foto" alt="Membro Equipe" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Dra. Maria Costa</h4>
+                            <p class="text-emerald-300 text-sm">
+                                <span class="lang-pt">Gerente de Biomol</span><span class="lang-en">Biomol Manager</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Membro 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative">
+                        <img src="https://placehold.co/400x300/0f172a/ffffff?text=Foto" alt="Membro Equipe" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Eng. Carlos Santos</h4>
+                            <p class="text-emerald-300 text-sm">
+                                <span class="lang-pt">Coord. Análise de Solo</span><span class="lang-en">Soil Analysis Coord.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Localização -->
+    <section id="contato" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Informações de Contato -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+                        <span class="lang-pt">Fale com o <span class="text-iag-gradient">IAG</span></span>
+                        <span class="lang-en">Contact <span class="text-iag-gradient">IAG</span></span>
+                    </h2>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">
+                                    <span class="lang-pt">Localização</span>
+                                    <span class="lang-en">Location</span>
+                                </h4>
+                                <p class="text-slate-600">Av. da Agricultura, 1000<br>Polo Tecnológico Agro<br>Cidade - Estado, CEP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">E-mail</h4>
+                                <a href="mailto:contato@institutoiag.com.br" class="text-emerald-600 hover:underline">contato@institutoiag.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">
+                                    <span class="lang-pt">Telefone</span>
+                                    <span class="lang-en">Phone</span>
+                                </h4>
+                                <p class="text-slate-600">+55 (00) 0000-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-200">
+                    <form onsubmit="event.preventDefault(); showMessage();">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">
+                                    <span class="lang-pt">Nome</span><span class="lang-en">Name</span>
+                                </label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">E-mail</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">
+                                    <span class="lang-pt">Mensagem</span><span class="lang-en">Message</span>
+                                </label>
+                                <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                                <span class="lang-pt">Enviar Mensagem</span><span class="lang-en">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Mensagem de Sucesso (Oculta) -->
+                    <div id="success-msg" class="hidden mt-4 p-4 bg-emerald-50 text-emerald-700 rounded-lg text-center font-medium border border-emerald-100">
+                        <span class="lang-pt">Mensagem enviada com sucesso!</span>
+                        <span class="lang-en">Message sent successfully!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-dna text-emerald-500"></i>
+                <span class="text-white font-bold tracking-wider">IAG</span>
+            </div>
+            <p class="text-sm text-center md:text-left">
+                &copy; <script>document.write(new Date().getFullYear())</script> Instituto Agro Genética. 
+                <span class="lang-pt">Todos os direitos reservados.</span>
+                <span class="lang-en">All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica de alternância de idioma
+        let currentLang = 'pt-BR';
+        const htmlTag = document.documentElement;
+        const langBtnText = document.getElementById('lang-btn-text');
+        const langBtnTextMobile = document.getElementById('lang-btn-text-mobile');
+
+        function toggleLanguage() {
+            if (currentLang === 'pt-BR') {
+                currentLang = 'en';
+                htmlTag.setAttribute('lang', 'en');
+                langBtnText.textContent = 'PT';
+                langBtnTextMobile.textContent = 'PT';
+            } else {
+                currentLang = 'pt-BR';
+                htmlTag.setAttribute('lang', 'pt-BR');
+                langBtnText.textContent = 'EN';
+                langBtnTextMobile.textContent = 'EN';
+            }
+        }
+
+        // Lógica da Navbar (Efeito de rolagem)
+        const navbar = document.getElementById('navbar');
+        const logoText = document.getElementById('logo-text');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+            }
+        });
+
+        // Menu Mobile
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Fechar menu mobile ao clicar em um link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Simulação de envio de formulário
+        function showMessage() {
+            const msg = document.getElementById('success-msg');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+                document.querySelector('form').reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
