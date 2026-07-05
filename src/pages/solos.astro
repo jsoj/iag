@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="IAG - Análise de Solos de Precisão">
+    <!-- Hero da Página -->
+    <section class="bg-iag-gradient relative py-20 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-amber-400 font-bold uppercase tracking-widest text-xs inline-block mb-3">
+                <span class="lang-pt">Nosso Principal Negócio</span><span class="lang-en">Our Core Business</span>
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                <span class="lang-pt">Análise de Solos</span><span class="lang-en">Soil Analysis</span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                <span class="lang-pt">Entenda a saúde e o potencial do seu solo. Diagnósticos de alta precisão para a tomada de decisão inteligente na adubação e calagem.</span>
+                <span class="lang-en">Understand your soil's health and potential. High-precision diagnostics for smart decision-making in fertilization and liming.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Por que Analisar o Solo? -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                        <span class="lang-pt">A base para a <span class="text-amber-600">máxima produtividade</span></span>
+                        <span class="lang-en">The foundation for <span class="text-amber-600">maximum yield</span></span>
+                    </h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        <span class="lang-pt">Uma lavoura produtiva começa debaixo da terra. A análise química e física do solo permite identificar deficiências nutricionais e barreiras físicas que limitam o desenvolvimento das raízes. No IAG, utilizamos equipamentos de ponta para fornecer laudos confiáveis que guiam as recomendações agronômicas exatas.</span>
+                        <span class="lang-en">A productive harvest starts underground. Chemical and physical soil analysis allows the identification of nutritional deficiencies and physical barriers that limit root development. At IAG, we use state-of-the-art equipment to provide reliable reports that guide exact agronomic recommendations.</span>
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-amber-100 text-amber-700 p-2 rounded-lg mt-1">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800"><span class="lang-pt">Economia de Insumos</span><span class="lang-en">Cost Efficiency</span></h4>
+                                <p class="text-slate-500 text-sm"><span class="lang-pt">Evite desperdícios aplicando apenas o corretivo e fertilizante que o seu solo realmente necessita.</span><span class="lang-en">Avoid waste by applying only the corrector and fertilizer your soil actually needs.</span></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-emerald-100 text-emerald-700 p-2 rounded-lg mt-1">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800"><span class="lang-pt">Nutrição Equilibrada</span><span class="lang-en">Balanced Nutrition</span></h4>
+                                <p class="text-slate-500 text-sm"><span class="lang-pt">Equilibre Macronutrientes e Micronutrientes para plantas mais saudáveis e resistentes a pragas.</span><span class="lang-en">Balance Macro and Micronutrients for healthier plants resistant to pests.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-emerald-500/10 rounded-3xl blur-2xl"></div>
+                    <img src="/18agronegociobiotecnologia.jpg" alt="Coleta de solo" class="rounded-3xl shadow-xl w-full h-[400px] object-cover relative z-10 border border-slate-200" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhamento de Análises Oferecidas -->
+    <section class="py-20 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                    <span class="lang-pt">Tipos de Análises no IAG</span><span class="lang-en">Types of Soil Analysis at IAG</span>
+                </h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    <span class="lang-pt">Oferecemos pacotes completos e customizados para atender as exigências de cada tipo de cultura e manejo de solo.</span>
+                    <span class="lang-en">We offer complete and customized packages to meet the demands of each crop and soil management type.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Análise Básica / Fertilidade -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-emerald-600 text-xs font-bold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full"><span class="lang-pt">Fertilidade Básica</span><span class="lang-en">Basic Fertility</span></span>
+                        <h3 class="text-xl font-bold mt-4 mb-3 text-slate-800"><span class="lang-pt">Química Rotina</span><span class="lang-en">Routine Chemical</span></h3>
+                        <p class="text-slate-500 text-sm mb-6"><span class="lang-pt">Indicado para acompanhamento anual da fertilidade geral das camadas aráveis do solo.</span><span class="lang-en">Recommended for annual monitoring of the overall fertility of arable soil layers.</span></p>
+                        
+                        <ul class="space-y-2 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> pH em CaCl2</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Fósforo (P), Potássio (K)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Cálcio (Ca), Magnésio (Mg)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Alumínio (Al) e H+Al</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Matéria Orgânica (M.O.)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> V%, CTC e Soma de Bases (SB)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Análise Completa + Micronutrientes -->
+                <div class="glass-card rounded-2xl p-8 border-2 border-emerald-500/30 shadow-md flex flex-col justify-between hover:shadow-lg transition-shadow relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-600 text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+                        <span class="lang-pt">Mais Recomendado</span><span class="lang-en">Most Recommended</span>
+                    </div>
+                    <div>
+                        <span class="text-amber-600 text-xs font-bold uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full mt-2 inline-block"><span class="lang-pt">Química Completa</span><span class="lang-en">Complete Chemical</span></span>
+                        <h3 class="text-xl font-bold mt-4 mb-3 text-slate-800"><span class="lang-pt">Completa + Micronutrientes</span><span class="lang-en">Complete + Micronutrients</span></h3>
+                        <p class="text-slate-500 text-sm mb-6"><span class="lang-pt">Ideal para áreas de implantação de novos cultivos ou correção de alta produtividade.</span><span class="lang-en">Ideal for areas setting up new crops or high-productivity corrections.</span></p>
+                        
+                        <ul class="space-y-2 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2 font-semibold text-emerald-700"><i class="fas fa-check text-emerald-500 text-xs"></i> <span class="lang-pt">Tudo da Análise de Rotina</span><span class="lang-en">Everything in Routine Analysis</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Enxofre (S), Boro (B)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Cobre (Cu), Ferro (Fe)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Manganês (Mn), Zinco (Zn)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Física / Textura -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-blue-600 text-xs font-bold uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full"><span class="lang-pt">Física do Solo</span><span class="lang-en">Soil Physics</span></span>
+                        <h3 class="text-xl font-bold mt-4 mb-3 text-slate-800"><span class="lang-pt">Granulometria (Textura)</span><span class="lang-en">Granulometry (Texture)</span></h3>
+                        <p class="text-slate-500 text-sm mb-6"><span class="lang-pt">Define a proporção física das partículas de areia, silte e argila do solo.</span><span class="lang-en">Defines the physical proportion of sand, silt, and clay particles in the soil.</span></p>
+                        
+                        <ul class="space-y-2 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Porcentagem de Argila</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Porcentagem de Silte</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Porcentagem de Areia</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Classificação Textural</li>
+                            <li class="flex items-center gap-2 text-slate-400"><span class="lang-pt">(Essencial para calcular a retenção de água e adubação nitrogenada)</span><span class="lang-en">(Essential for estimating water retention and nitrogen fertilization)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guia de Coleta de Solo (Manual do Produtor) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs inline-block mb-2">
+                    <span class="lang-pt">Boas Práticas</span><span class="lang-en">Best Practices</span>
+                </span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                    <span class="lang-pt">Guia Prático para Coleta de Amostras</span><span class="lang-en">Practical Sample Collection Guide</span>
+                </h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    <span class="lang-pt">A confiabilidade do laudo final depende diretamente de uma boa coleta no campo. Siga estas etapas recomendadas por nossos agrônomos:</span>
+                    <span class="lang-en">The reliability of the final report depends directly on proper field collection. Follow these steps recommended by our agronomists:</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Passo 1 -->
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border border-amber-200">
+                        1
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">
+                        <span class="lang-pt">Divisão em Talhões</span><span class="lang-en">Divide into Plots</span>
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        <span class="lang-pt">Divida a propriedade em áreas homogêneas (até 20ha), considerando relevo, cor do solo, histórico e manejo.</span>
+                        <span class="lang-en">Divide the property into uniform areas (up to 20ha), considering slope, soil color, cropping history, and management.</span>
+                    </p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border border-amber-200">
+                        2
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">
+                        <span class="lang-pt">Subamostras (Zigue-Zague)</span><span class="lang-en">Subsamples (Zig-Zag)</span>
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        <span class="lang-pt">Caminhe em zigue-zague coletando de 15 a 20 subamostras simples no talhão para misturar no balde.</span>
+                        <span class="lang-en">Walk in a zig-zag pattern, collecting 15 to 20 simple subsamples across the plot to mix in a clean bucket.</span>
+                    </p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border border-amber-200">
+                        3
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">
+                        <span class="lang-pt">Profundidade Correta</span><span class="lang-en">Correct Depth</span>
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        <span class="lang-pt">Retire a camada superficial de folhas e limpe o local. Colete na profundidade de 0 a 20 cm (e 20-40 cm se solicitado).</span>
+                        <span class="lang-en">Clear the surface organic litter. Sample at a depth of 0 to 20 cm (and 20-40 cm if subsoil analysis is needed).</span>
+                    </p>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border border-amber-200">
+                        4
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">
+                        <span class="lang-pt">Envio ao IAG</span><span class="lang-en">Send to IAG</span>
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        <span class="lang-pt">Retire cerca de 500g da mistura homogênea, coloque em saquinho plástico limpo, identifique bem e envie ao nosso laboratório.</span>
+                        <span class="lang-en">Take about 500g of the mixed composite, pack in a clean plastic bag, label clearly, and ship to our lab.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada para Ação / Envio -->
+    <section class="py-16 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-iag-gradient opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl font-bold mb-4">
+                <span class="lang-pt">Pronto para aumentar sua produtividade?</span>
+                <span class="lang-en">Ready to increase your productivity?</span>
+            </h2>
+            <p class="text-slate-300 max-w-xl mx-auto mb-8 text-sm md:text-base">
+                <span class="lang-pt">Entre em contato conosco para solicitar saquinhos de coleta, caixas de transporte ou agendar a entrega das suas amostras.</span>
+                <span class="lang-en">Contact us to request collection bags, shipping boxes or schedule the delivery of your soil samples.</span>
+            </p>
+            <a href="/#contato" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 px-8 rounded-lg transition-transform transform hover:-translate-y-1 inline-block">
+                <span class="lang-pt">Falar com Consultor de Solos</span>
+                <span class="lang-en">Talk to a Soil Specialist</span>
+            </a>
+        </div>
+    </section>
+</Layout>

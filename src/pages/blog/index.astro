@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Formata data de forma simples
+function formatDate(date: Date, lang: 'pt' | 'en') {
+    return date.toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+}
+---
+
+<Layout title="IAG - Blog de Inovação Agrícola">
+    <!-- Hero da Página -->
+    <section class="bg-iag-gradient relative py-20 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs inline-block mb-3">
+                <span class="lang-pt">Conhecimento que Transforma</span><span class="lang-en">Knowledge that Transforms</span>
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                <span class="lang-pt">Blog do IAG</span><span class="lang-en">IAG Blog</span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                <span class="lang-pt">Informações técnicas, artigos de especialistas e novidades sobre biotecnologia, melhoramento genético e fertilidade de solos.</span>
+                <span class="lang-en">Technical info, expert articles, and news on biotechnology, plant breeding, and soil fertility.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Lista de Artigos -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sortedPosts.map(post => (
+                    <article class={`glass-card rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between ${post.data.lang === 'pt' ? 'lang-pt' : 'lang-en'}`}>
+                        <div>
+                            {post.data.image && (
+                                <div class="h-48 overflow-hidden bg-slate-100">
+                                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                                </div>
+                            )}
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    {post.data.tags?.map(tag => (
+                                        <span class="text-[10px] font-bold uppercase bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 hover:text-emerald-600 transition-colors">
+                                    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                                </h3>
+                                <p class="text-slate-500 text-sm mb-4 line-clamp-3">
+                                    {post.data.description}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                            <span>{post.data.author}</span>
+                            <span>{formatDate(post.data.pubDate, post.data.lang)}</span>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>

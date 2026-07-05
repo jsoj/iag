@@ -1,0 +1,110 @@
+---
+---
+<nav class="fixed w-full z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-lg" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="/" class="text-2xl font-bold text-white tracking-wider flex items-center gap-2" id="logo-text">
+                    <i class="fas fa-dna text-emerald-400"></i>
+                    <span class="border-r-2 border-emerald-400/50 pr-2">IAG</span>
+                    <span class="text-sm font-normal text-slate-300 uppercase tracking-widest hidden sm:block">Instituto Agro Genética</span>
+                </a>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-white/90">
+                <a href="/servicos" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
+                <a href="/solos" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Análise de Solo</span><span class="lang-en">Soil Analysis</span></a>
+                <a href="/sobre" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Sobre Nós</span><span class="lang-en">About Us</span></a>
+                <a href="/blog" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Blog</span><span class="lang-en">Blog</span></a>
+                <a href="/#contato" class="hover:text-emerald-400 transition-colors"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
+                
+                <!-- Botão de Idioma -->
+                <button id="lang-btn" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm transition-all border border-white/10 cursor-pointer">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-btn-text" class="font-bold">EN</span>
+                </button>
+            </div>
+
+            <!-- Menu Mobile Button -->
+            <div class="md:hidden flex items-center gap-4">
+                <button id="lang-btn-mobile" class="text-white hover:text-emerald-400 transition-colors cursor-pointer">
+                    <span id="lang-btn-text-mobile" class="font-bold text-sm">EN</span>
+                </button>
+                <button id="mobile-menu-button" class="text-white hover:text-emerald-400 focus:outline-none cursor-pointer">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/10 absolute w-full">
+        <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+            <a href="/servicos" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
+            <a href="/solos" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Análise de Solo</span><span class="lang-en">Soil Analysis</span></a>
+            <a href="/sobre" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Sobre Nós</span><span class="lang-en">About Us</span></a>
+            <a href="/blog" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Blog</span><span class="lang-en">Blog</span></a>
+            <a href="/#contato" class="block px-3 py-3 text-white hover:bg-white/5 rounded-md"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Lógica de alternância de idioma
+    const langBtn = document.getElementById('lang-btn');
+    const langBtnMobile = document.getElementById('lang-btn-mobile');
+    const htmlTag = document.documentElement;
+
+    function toggleLanguage() {
+        const currentLang = htmlTag.getAttribute('lang') || 'pt-BR';
+        const newLang = currentLang === 'pt-BR' ? 'en' : 'pt-BR';
+        
+        htmlTag.setAttribute('lang', newLang);
+        localStorage.setItem('selected-language', newLang);
+        updateLanguageButtons(newLang);
+    }
+
+    function updateLanguageButtons(lang) {
+        const btnText = document.getElementById('lang-btn-text');
+        const btnTextMobile = document.getElementById('lang-btn-text-mobile');
+        if (btnText) btnText.textContent = lang === 'pt-BR' ? 'EN' : 'PT';
+        if (btnTextMobile) btnTextMobile.textContent = lang === 'pt-BR' ? 'EN' : 'PT';
+    }
+
+    if (langBtn) langBtn.addEventListener('click', toggleLanguage);
+    if (langBtnMobile) langBtnMobile.addEventListener('click', toggleLanguage);
+
+    // Inicialização do botão com base no idioma carregado
+    const initialLang = htmlTag.getAttribute('lang') || 'pt-BR';
+    updateLanguageButtons(initialLang);
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (navbar) {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-slate-900/95', 'shadow-lg');
+            } else {
+                // Mantemos a cor de fundo por segurança ao navegar entre páginas internas
+            }
+        }
+    });
+
+    // Menu Mobile toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    }
+</script>

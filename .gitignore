@@ -1,0 +1,7 @@
+suporte/
+node_modules/
+.astro/
+dist/
+.env
+.env.*
+.DS_Store

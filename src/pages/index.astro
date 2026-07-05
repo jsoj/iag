@@ -1,0 +1,364 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="IAG - Instituto Agro Genética">
+    <!-- Hero Section -->
+    <section class="bg-iag-gradient relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+        <!-- Padrão de grade de fundo sutil -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 text-white">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <i class="fas fa-microscope text-emerald-400"></i>
+                    <span class="lang-pt">Precisão e Inovação</span>
+                    <span class="lang-en">Precision and Innovation</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <span class="lang-pt">Decodificando o futuro da sua <span class="text-emerald-400">produtividade agrícola</span>.</span>
+                    <span class="lang-en">Decoding the future of your <span class="text-emerald-400">agricultural yield</span>.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    <span class="lang-pt">O Instituto Agro Genética (IAG) oferece soluções de ponta em marcadores moleculares e análise de solo para impulsionar os resultados no campo.</span>
+                    <span class="lang-en">The Agro Genetics Institute (IAG) offers cutting-edge solutions in molecular markers and soil analysis to boost results in the field.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="/servicos" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3 px-8 rounded-lg shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-1 text-center">
+                        <span class="lang-pt">Nossos Serviços</span>
+                        <span class="lang-en">Our Services</span>
+                    </a>
+                    <a href="#contato" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold py-3 px-8 rounded-lg transition-all text-center">
+                        <span class="lang-pt">Fale Conosco</span>
+                        <span class="lang-en">Contact Us</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 w-full mt-12 lg:mt-0 relative">
+                <!-- Imagem ilustrativa abstrata com efeito de vidro -->
+                <div class="relative w-full aspect-square max-w-md mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="glass-card absolute inset-4 rounded-3xl overflow-hidden flex items-center justify-center border border-white/20 shadow-2xl">
+                        <img src="/18agronegociobiotecnologia.jpg" alt="Biotecnologia Agrícola" class="w-full h-full object-cover opacity-90" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white text-left">
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest"><span class="lang-pt">Biotecnologia</span><span class="lang-en">Biotechnology</span></span>
+                            <h3 class="text-xl font-bold mt-1 shadow-sm"><span class="lang-pt">Genética & Solos</span><span class="lang-en">Genetics & Soils</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultivos Atendidos -->
+    <section class="py-12 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">
+                <span class="lang-pt">Cultivos que atendemos</span>
+                <span class="lang-en">Crops we support</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-seedling text-2xl text-amber-500"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Soja</span><span class="lang-en">Soybean</span>
+                    </span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-leaf text-2xl text-yellow-500"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Milho</span><span class="lang-en">Corn</span>
+                    </span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cloud text-2xl text-slate-300"></i>
+                    <span class="text-xl font-bold text-slate-700">
+                        <span class="lang-pt">Algodão</span><span class="lang-en">Cotton</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades Resumo -->
+    <section class="py-24 relative bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <span class="lang-pt">Nossas <span class="text-iag-gradient">Especialidades</span></span>
+                    <span class="lang-en">Our <span class="text-iag-gradient">Specialties</span></span>
+                </h2>
+                <p class="text-slate-600">
+                    <span class="lang-pt">Tecnologia de precisão aplicada da semente ao solo para garantir a máxima eficiência e qualidade da sua lavoura.</span>
+                    <span class="lang-en">Precision technology applied from seed to soil to ensure maximum efficiency and quality for your crop.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Biomol Summary Card -->
+                <div class="glass-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                        <div class="w-16 h-16 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg mb-8">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                            <span class="lang-pt">Serviços Biomoleculares</span>
+                            <span class="lang-en">Biomolecular Services</span>
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            <span class="lang-pt">Análises genéticas precisas através de marcadores moleculares. Identificação de genes de interesse, controle de pureza e suporte ao melhoramento genético vegetal.</span>
+                            <span class="lang-en">Precise genetic analysis through molecular markers. Identification of genes of interest, purity control, and support for plant breeding.</span>
+                        </p>
+                    </div>
+                    <a href="/servicos#biomol" class="inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-500 transition-colors mt-4">
+                        <span class="lang-pt">Saber Mais</span><span class="lang-en">Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Solo Summary Card -->
+                <div class="glass-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                        <div class="w-16 h-16 bg-amber-600 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg mb-8">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                            <span class="lang-pt">Análise de Solos</span>
+                            <span class="lang-en">Soil Analysis</span>
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            <span class="lang-pt">Nosso principal negócio. Diagnósticos de fertilidade, teores de nutrientes (química) e composição física (textura) para planejar a adubação perfeita.</span>
+                            <span class="lang-en">Our core business. Fertility diagnosis, nutrient levels (chemical) and physical composition (texture) to plan perfect fertilization.</span>
+                        </p>
+                    </div>
+                    <a href="/solos" class="inline-flex items-center gap-2 text-amber-600 font-bold hover:text-amber-500 transition-colors mt-4">
+                        <span class="lang-pt">Ver Detalhes do Solo</span><span class="lang-en">View Soil Details</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias e Capacidade -->
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-iag-gradient opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        <span class="lang-pt">Tecnologias & Capacidade</span>
+                        <span class="lang-en">Technologies & Capacity</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg mb-8">
+                        <span class="lang-pt">Nossa infraestrutura foi desenhada para atender altas demandas agrícolas com rigor técnico e agilidade na entrega dos laudos.</span>
+                        <span class="lang-en">Our infrastructure was designed to meet high agricultural demands with technical rigor and rapid report delivery.</span>
+                    </p>
+                    
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 mb-8">
+                        <h4 class="text-emerald-400 font-bold mb-2 uppercase tracking-wide text-sm">
+                            <span class="lang-pt">Tecnologias Homologadas</span>
+                            <span class="lang-en">Approved Technologies</span>
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white px-3 py-1 rounded inline-block">
+                                <span class="text-slate-900 font-black text-xl tracking-tighter">BASF</span>
+                            </div>
+                            <span class="text-slate-300 text-sm">
+                                <span class="lang-pt">Protocolos moleculares validados e homologados BASF.</span>
+                                <span class="lang-en">Validated and approved BASF molecular protocols.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-all">
+                        <i class="fas fa-chart-line text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">Alta</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Capacidade Operacional</span>
+                            <span class="lang-en">Operational Capacity</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-all">
+                        <i class="fas fa-stopwatch text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">Rápido</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Prazo de Entrega (SLA)</span>
+                            <span class="lang-en">Turnaround Time (SLA)</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-all">
+                        <i class="fas fa-shield-alt text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">100%</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Controle de Qualidade</span>
+                            <span class="lang-en">Quality Control</span>
+                        </p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-all">
+                        <i class="fas fa-server text-4xl text-emerald-400 mb-4"></i>
+                        <h3 class="text-3xl font-bold mb-2">Digital</h3>
+                        <p class="text-slate-400 text-sm">
+                            <span class="lang-pt">Rastreabilidade & Dados</span>
+                            <span class="lang-en">Traceability & Data</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Localização -->
+    <section id="contato" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Informações de Contato -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+                        <span class="lang-pt">Fale com o <span class="text-iag-gradient">IAG</span></span>
+                        <span class="lang-en">Contact <span class="text-iag-gradient">IAG</span></span>
+                    </h2>
+                    
+                    <div class="space-y-8 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">
+                                    <span class="lang-pt">Localização</span>
+                                    <span class="lang-en">Location</span>
+                                </h4>
+                                <p class="text-slate-600">Rua Fortaleza, 1469<br>Jardim Esmeralda<br>Aparecida de Goiânia - GO, CEP 74905-180</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">E-mail</h4>
+                                <a href="mailto:contato@institutoagrogen.com" class="text-emerald-600 hover:underline">contato@institutoagrogen.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">
+                                    <span class="lang-pt">Telefone / WhatsApp</span>
+                                    <span class="lang-en">Phone / WhatsApp</span>
+                                </h4>
+                                <p class="text-slate-600">+55 (43) 9 8859-7348</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário com integração Web3Forms -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-200 shadow-md">
+                    <!-- Para trocar o email de destino, basta substituir o valor de access_key abaixo por uma chave gratuita em https://web3forms.com/ -->
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                        <!-- Chave de Acesso Pública (Web3Forms configurada pelo usuário) -->
+                        <input type="hidden" name="access_key" value="52255464-3f59-4cb4-8f21-d92c68fb59af">
+                        <input type="hidden" name="subject" value="Novo contato do site IAG">
+                        <input type="hidden" name="from_name" value="IAG Website">
+                        <!-- Redireciona de volta após o envio -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">
+                                    <span class="lang-pt">Nome</span><span class="lang-en">Name</span>
+                                </label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">E-mail</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">
+                                    <span class="lang-pt">Mensagem</span><span class="lang-en">Message</span>
+                                </label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition-colors cursor-pointer">
+                                <span class="lang-pt">Enviar Mensagem</span><span class="lang-en">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Mensagem de Sucesso (Exibida dinamicamente via JS) -->
+                    <div id="success-msg" class="hidden mt-4 p-4 bg-emerald-50 text-emerald-700 rounded-lg text-center font-medium border border-emerald-100">
+                        <span class="lang-pt">Mensagem enviada com sucesso!</span>
+                        <span class="lang-en">Message sent successfully!</span>
+                    </div>
+                    
+                    <div id="error-msg" class="hidden mt-4 p-4 bg-red-50 text-red-700 rounded-lg text-center font-medium border border-red-100">
+                        <span class="lang-pt">Erro ao enviar. Tente novamente mais tarde.</span>
+                        <span class="lang-en">Error sending message. Please try again later.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    // Submissão assíncrona AJAX para o Web3Forms
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successMsg = document.getElementById('success-msg');
+    const errorMsg = document.getElementById('error-msg');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            if (successMsg) successMsg.classList.add('hidden');
+            if (errorMsg) errorMsg.classList.add('hidden');
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonRes = await response.json();
+                if (response.status == 200) {
+                    if (successMsg) successMsg.classList.remove('hidden');
+                    form.reset();
+                    setTimeout(() => {
+                        if (successMsg) successMsg.classList.add('hidden');
+                    }, 4000);
+                } else {
+                    console.log(response);
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                if (errorMsg) errorMsg.classList.remove('hidden');
+            });
+        });
+    }
+</script>
