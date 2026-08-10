@@ -57,20 +57,20 @@ html:not([lang]) .lang-en { display: none !important; } /* Padrão em português
 
 .blog-content {
     font-size: 1.25rem !important; /* 20px */
-    line-height: 1.9 !important;
+    line-height: 1.6 !important; /* Linhas mais juntas e elegantes */
     color: #334155 !important; /* slate-700 */
 }
 
-/* Parágrafos com espaçamento amplo e generoso */
+/* Parágrafos com espaçamento amplo entre blocos, mas entrelinha compacta */
 .blog-content p {
     margin-top: 0 !important;
-    margin-bottom: 2.25rem !important; /* 36px de distância entre parágrafos */
+    margin-bottom: 2.25rem !important; /* 36px de distância entre parágrafos MANTIDO */
     font-size: 1.25rem !important; /* 20px */
-    line-height: 1.9 !important;
+    line-height: 1.6 !important; /* Espaço entre linhas reduzido */
     color: #334155 !important;
 }
 
-/* Títulos H2 grandes, imponentes e com margens marcantes */
+/* Títulos H2 grandes, imponentes e com margens marcantes MANTIDAS */
 .blog-content h2 {
     font-size: 2rem !important; /* 32px */
     font-weight: 900 !important;
@@ -80,17 +80,17 @@ html:not([lang]) .lang-en { display: none !important; } /* Padrão em português
     padding-bottom: 0.75rem !important;
     border-bottom: 3px solid #cbd5e1 !important; /* Linha de divisão sob o H2 */
     letter-spacing: -0.025em;
-    line-height: 1.35 !important;
+    line-height: 1.3 !important;
 }
 
-/* Subtítulos H3 destacados em verde esmeralda */
+/* Subtítulos H3 destacados em verde esmeralda MANTIDOS */
 .blog-content h3 {
     font-size: 1.5rem !important; /* 24px */
     font-weight: 800 !important;
     color: #047857 !important; /* emerald-700 */
     margin-top: 3rem !important; /* 48px de margem superior */
     margin-bottom: 1.5rem !important; /* 24px de margem inferior */
-    line-height: 1.4 !important;
+    line-height: 1.35 !important;
 }
 
 /* Listas ordenadas e não ordenadas com recuo e espaçamento */
@@ -109,9 +109,9 @@ html:not([lang]) .lang-en { display: none !important; } /* Padrão em português
 }
 
 .blog-content li {
-    margin-bottom: 1rem !important; /* 16px de espaço entre os itens */
+    margin-bottom: 1rem !important; /* 16px de espaço entre os itens MANTIDO */
     font-size: 1.25rem !important;
-    line-height: 1.8 !important;
+    line-height: 1.55 !important; /* Espaço entre linhas reduzido */
     color: #334155 !important;
 }
 
@@ -130,6 +130,7 @@ html:not([lang]) .lang-en { display: none !important; } /* Padrão em português
     margin-bottom: 3rem !important;
     border-radius: 0 1.25rem 1.25rem 0 !important;
     font-size: 1.2rem !important;
+    line-height: 1.6 !important;
     color: #065f46 !important; /* emerald-800 */
     font-weight: 600 !important;
     box-shadow: 0 4px 12px rgba(6, 78, 59, 0.05) !important;
@@ -138,6 +139,7 @@ html:not([lang]) .lang-en { display: none !important; } /* Padrão em português
 .blog-content blockquote p {
     margin-bottom: 0 !important;
     color: #065f46 !important;
+    line-height: 1.6 !important;
 }
 
 /* Linha divisória horizontal (HR) */
