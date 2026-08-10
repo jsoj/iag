@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 @import "tailwindcss";
@@ -50,3 +50,112 @@ body {
 html[lang="en"] .lang-pt { display: none !important; }
 html[lang="pt-BR"] .lang-en { display: none !important; }
 html:not([lang]) .lang-en { display: none !important; } /* Padrão em português */
+
+/* ==========================================================================
+   ESTILIZAÇÃO RICA E ESPAÇOSA PARA OS ARTIGOS DO BLOG (.blog-content)
+   ========================================================================== */
+
+.blog-content {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.9 !important;
+    color: #334155 !important; /* slate-700 */
+}
+
+/* Parágrafos com espaçamento amplo e generoso */
+.blog-content p {
+    margin-top: 0 !important;
+    margin-bottom: 2.25rem !important; /* 36px de distância entre parágrafos */
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.9 !important;
+    color: #334155 !important;
+}
+
+/* Títulos H2 grandes, imponentes e com margens marcantes */
+.blog-content h2 {
+    font-size: 2rem !important; /* 32px */
+    font-weight: 900 !important;
+    color: #064e3b !important; /* emerald-900 */
+    margin-top: 4rem !important; /* 64px de margem superior */
+    margin-bottom: 1.75rem !important; /* 28px de margem inferior */
+    padding-bottom: 0.75rem !important;
+    border-bottom: 3px solid #cbd5e1 !important; /* Linha de divisão sob o H2 */
+    letter-spacing: -0.025em;
+    line-height: 1.35 !important;
+}
+
+/* Subtítulos H3 destacados em verde esmeralda */
+.blog-content h3 {
+    font-size: 1.5rem !important; /* 24px */
+    font-weight: 800 !important;
+    color: #047857 !important; /* emerald-700 */
+    margin-top: 3rem !important; /* 48px de margem superior */
+    margin-bottom: 1.5rem !important; /* 24px de margem inferior */
+    line-height: 1.4 !important;
+}
+
+/* Listas ordenadas e não ordenadas com recuo e espaçamento */
+.blog-content ul {
+    list-style-type: disc !important;
+    padding-left: 2rem !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.blog-content ol {
+    list-style-type: decimal !important;
+    padding-left: 2rem !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.blog-content li {
+    margin-bottom: 1rem !important; /* 16px de espaço entre os itens */
+    font-size: 1.25rem !important;
+    line-height: 1.8 !important;
+    color: #334155 !important;
+}
+
+/* Negritos (Strong / Bold) com alto contraste */
+.blog-content strong, .blog-content b {
+    font-weight: 900 !important;
+    color: #0f172a !important; /* slate-900 */
+}
+
+/* Caixas de citação e alertas (Blockquotes) */
+.blog-content blockquote {
+    border-left: 5px solid #059669 !important; /* emerald-600 */
+    background-color: #f0fdf4 !important; /* emerald-50 */
+    padding: 1.5rem 2rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    border-radius: 0 1.25rem 1.25rem 0 !important;
+    font-size: 1.2rem !important;
+    color: #065f46 !important; /* emerald-800 */
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.05) !important;
+}
+
+.blog-content blockquote p {
+    margin-bottom: 0 !important;
+    color: #065f46 !important;
+}
+
+/* Linha divisória horizontal (HR) */
+.blog-content hr {
+    border: 0 !important;
+    border-top: 2px dashed #cbd5e1 !important;
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+}
+
+/* Links no corpo do texto */
+.blog-content a {
+    color: #059669 !important;
+    font-weight: 800 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+}
+
+.blog-content a:hover {
+    color: #047857 !important;
+}
