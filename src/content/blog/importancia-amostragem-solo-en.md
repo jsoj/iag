@@ -8,22 +8,56 @@ tags: ["Soil", "Management", "Fertilizer"]
 lang: "en"
 ---
 
-Soil analysis is the most cost-effective tool a farmer has to plan crop fertilization and liming. However, it is common for sampling errors to generate distorted results, leading to unnecessary fertilizer expenditures or, worse, yield losses due under-fertilization.
+Soil analysis is the **most cost-effective tool** a farmer has to plan crop fertilization and liming. However, sampling errors in the field frequently generate distorted laboratory results, leading to unnecessary fertilizer expenditures or severe yield losses due to nutrient under-dosage.
 
-In this article, we outline the critical points you must watch when conducting soil sampling on your farm.
+> **Golden Rule of Agronomy:** Even the most precise laboratory in the world cannot correct a poorly collected field sample. Quality analysis starts on your farm.
 
-## 1. The Concept of Homogeneity (Plot Division)
-Samples must represent uniform areas. Never mix samples from uplands and lowlands, sandy and clayey soils, or areas with different fertilization histories. Divide your property into homogeneous plots of up to 20 hectares.
+In this practical guide, we outline the **essential critical steps** you must follow when conducting soil sampling on your property.
 
-## 2. Sampling (Simple vs. Composite)
-A single scoop of soil does not represent an entire field. You need to walk in a zig-zag pattern across the plot and collect between **15 to 20 sub-samples**.
-* Mix all these sub-samples together in a clean plastic bucket.
-* Take about 500g of this mixture to form the **composite sample** to be sent to the IAG laboratory.
+---
 
-## 3. Sampling Depth
-For most annual crops (such as soybeans, corn, and cotton), the standard analysis depth is **0 to 20 cm**. In consolidated no-till systems or perennial crops, complementary analyses in the **20 to 40 cm** layer are highly recommended to assess calcium and gypsum needs.
+## **1. The Concept of Homogeneity (Field Division)**
 
-## 4. Clean Equipment
-Use clean soil augers (probe or screw type) or clean spades. Collection buckets and bags must not contain residues of fertilizers, lime, or dust, as even trace amounts of these inputs can drastically distort nutrient levels read at the lab.
+Samples must represent **strictly uniform areas**. Never mix soil collected from areas with different physical characteristics or management histories.
 
-Plan your analyses ahead of time (at least 30 to 45 days before planting) to buy correctives and apply them so they have enough time to react in the soil. Contact IAG to receive additional guidelines or request collection materials!
+* **Topography & Soil Type:** Separate uplands from lowlands, as well as sandy soils from clayey soils.
+* **Management History:** Fields that received different lime or fertilizer applications in previous seasons must be sampled separately.
+* **Plot Size:** Divide your farm into homogeneous plots of a maximum of **20 hectares (50 acres)**.
+
+---
+
+## **2. Simple vs. Composite Sampling**
+
+A single scoop of soil does not represent an entire field. To obtain a reliable result, sampling must be performed in a **zig-zag pattern**:
+
+1. Walk in a zig-zag pattern across the entire selected plot.
+2. Collect **15 to 20 simple sub-samples** evenly distributed throughout the area.
+3. Mix all sub-samples thoroughly in a clean plastic bucket.
+4. Extract approximately **500g (1 lb) of this mixture** to form the **composite sample** to be sent to the IAG laboratory.
+
+---
+
+## **3. Recommended Sampling Depths**
+
+Sampling depth varies according to the crop system and diagnostic objectives:
+
+* **0 to 20 cm (0 to 8 inches):** Standard depth for most annual crops (soybeans, corn, cotton), where most root systems and applied fertilizers are concentrated.
+* **20 to 40 cm (8 to 16 inches):** Recommended for **consolidated No-Till systems** or perennial crops. Essential to assess agricultural gypsum needs and deep toxic aluminum levels.
+
+---
+
+## **4. Equipment Cleanliness & Care**
+
+Even trace amounts of contamination can drastically alter chemical results in the laboratory.
+
+* Always use **clean soil augers** (probe or screw type) or rust-free spades.
+* Collection buckets and plastic bags must be **rigorously clean**, free from fertilizer, lime, dust, or animal feed residues.
+* Label each bag with a waterproof tag indicating farm name, plot ID, and sampling depth.
+
+---
+
+## **🌿 Plan Your Soil Analysis with IAG**
+
+Conduct your sampling at least **30 to 45 days prior to planting**. This ensures sufficient time for laboratory processing, report interpretation, fertilizer purchasing, and corrective field application.
+
+Need collection bags or technical guidance? **Contact the IAG technical team** to guarantee fast, precise laboratory reports for your farm!
