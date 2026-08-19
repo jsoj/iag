@@ -3,7 +3,7 @@ title: "Como os marcadores moleculares aceleram o melhoramento genético"
 description: "Descubra como a biologia molecular reduz pela metade o tempo de lançamento de novas cultivares de soja e milho."
 pubDate: 2026-06-05
 author: "Marcos Norio"
-image: "/norio.png"
+image: "/marcadores_moleculares_soja.jpg"
 tags: ["Genética", "Melhoramento", "Biotecnologia"]
 lang: "pt"
 ---

@@ -3,7 +3,7 @@ title: "How Molecular Markers Accelerate Crop Breeding"
 description: "Discover how molecular biology cuts the development time of new soybean and corn cultivars in half."
 pubDate: 2026-06-05
 author: "Marcos Norio"
-image: "/norio.png"
+image: "/marcadores_moleculares_soja.jpg"
 tags: ["Genetics", "Breeding", "Biotechnology"]
 lang: "en"
 ---
