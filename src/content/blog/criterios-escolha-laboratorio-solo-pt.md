@@ -75,5 +75,5 @@ No **IAG**, combinamos **ciência analítica de ponta** com atendimento ágil pa
 Garanta a máxima eficiência na adubação da sua próxima safra com quem entende de ciência do solo.
 
 * 📍 **Endereço para Envio:** Rua Fortaleza, 1469, Jardim Esmeralda, Aparecida de Goiânia - GO (CEP 74905-180)
-* 📞 **WhatsApp / Atendimento:** +55 (43) 9 8859-7348
+* 📞 **WhatsApp / Atendimento:** [(61) 9639-3545](https://wa.me/556196393545)
 * ✉️ **E-mail:** contato@institutoagrogen.com
